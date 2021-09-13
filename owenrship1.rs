@@ -28,6 +28,10 @@ fn main() {
     println!("{}", msg_string);
     first_word(&msg);
 
+    let slice = &msg[1..3];
+    //          ^ size of `str` cannot be known at compilation time
+    //            has to be a reference
+
 }
 
 // some_string is a reference so we don't take ownership
