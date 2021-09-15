@@ -12,9 +12,19 @@ fn mean(map: &HashMap<i32, i32>) -> f32{
     (a as f32)/(b as f32)
 }
 
+}fn median(v: &mut Vec<i32>) -> i32{
+    v.sort();
+
+    println!("{:?}", v);
+
+    let ret = v.get(v.len() / 2);
+    // println!("{:?}", ret);
+    *(ret.unwrap())
+
+
 fn main() {
 
-    let numbers = vec![1,4,2,1,4,6,1,3,3,3,1,1,2,6,7,8,0,10,11,15];
+    let mut numbers = vec![1,4,2,1,4,6,1,3,3,3,1,1,2,6,7,8,0,10,11,15];
     // for _ in numbers.iter() {
     //     zero_values.push(0);
     // }
@@ -34,5 +44,10 @@ fn main() {
 
     let mean = mean(&map);
     println!("{:?}", mean);
+
+    println!("{:?}", numbers);
+    println!("median");
+    let median = median(&mut numbers);
+    println!("{}", median);
 
 }
